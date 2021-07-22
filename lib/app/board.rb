@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-$:.unshift File.expand_path("./../BDD", __FILE__)
+$:.unshift File.expand_path("./../lib", __FILE__)
 require_relative 'game.rb'
 require_relative 'boardcase.rb'
 require_relative 'player.rb'
@@ -34,6 +34,7 @@ class Board
     #@@board_array = [@a1, @a2, @a3, @b1, @b2, @b3, @c1, @c2, @c3]
   end
 
+  #fonction qui permet d'afficher le plateau de jeu
   def show_board
     puts "Voici le plateau de jeu :"
     
@@ -47,7 +48,31 @@ class Board
     puts " "
   end
 
-
+  #méthode qui permet de modifier une case suite à l'action d'un joueur
+  def case_change(turn_player, case_position)
+    if case_position == "A1"
+      @a1.case_mark = turn_player.symbol
+    elsif case_position == "A2"
+      @a2.case_mark = turn_player.symbol
+    elsif case_position == "A3"
+      @a3.case_mark = turn_player.symbol
+    elsif case_position == "B1"
+      @b1.case_mark = turn_player.symbol   
+    elsif case_position == "B2"
+      @b2.case_mark = turn_player.symbol
+    elsif case_position == "B3"
+      @b3.case_mark = turn_player.symbol
+    elsif case_position == "C1"
+      @c1.case_mark = turn_player.symbol
+    elsif case_position == "C2"
+      @c2.case_mark = turn_player.symbol
+    elsif case_position == "C3"
+      @c3.case_mark = turn_player.symbol
+    else 
+      puts "it's not a good choice, please try again !!"
+      
+    end
+  end
 
   #binding.pry
 end
