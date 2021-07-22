@@ -12,12 +12,13 @@ require_relative 'player.rb'
 
 class Board
   attr_accessor :a1, :a2, :a3, :b1, :b2, :b3, :c1, :c2, :c3
-  @@board_arrray = [ ] 
-
+  @@board_grid = [ ] 
+  #@@board_array = [ ]
   
 
   def initialize
-    board_arrray = [["", ""]]
+    board_grid = [""]
+   # board_array = [["", ""]]
     @a1 = BoardCase.new("A1", " ")
     @a2 = BoardCase.new("A2", " ")
     @a3 = BoardCase.new("A3", " ")
@@ -29,19 +30,20 @@ class Board
     @c3 = BoardCase.new("C3", " ")
   end
   def put_in_the_array
-    @@board_arrray = [[@a1.case_mark, @a2.case_mark, @a3.case_mark], [@b1.case_mark, @b2.case_mark, @b3.case_mark], [@c1.case_mark, @c2.case_mark, @c3.case_mark]]
+    @@board_grid = [[@a1.case_mark, @a2.case_mark, @a3.case_mark], [@b1.case_mark, @b2.case_mark, @b3.case_mark], [@c1.case_mark, @c2.case_mark, @c3.case_mark]]
+    #@@board_array = [@a1, @a2, @a3, @b1, @b2, @b3, @c1, @c2, @c3]
   end
 
   def show_board
     puts "Voici le plateau de jeu :"
     
-    @@board_arrray
+    @@board_grid
     puts " "
-    puts "         " + "#{@@board_arrray[0][0]} | #{@@board_arrray[1][0]}| #{@@board_arrray[2][0]}"
+    puts "         " + "#{@@board_grid[0][0]} | #{@@board_grid[1][0]}| #{@@board_grid[2][0]}"
     puts "         " + "--------"
-    puts "         " + "#{@@board_arrray[0][1]} | #{@@board_arrray[1][1]}| #{@@board_arrray[2][1]}"
+    puts "         " + "#{@@board_grid[0][1]} | #{@@board_grid[1][1]}| #{@@board_grid[2][1]}"
     puts "         " + "--------"
-    puts "         " + "#{@@board_arrray[0][2]} | #{@@board_arrray[1][2]}| #{@@board_arrray[2][2]}"
+    puts "         " + "#{@@board_grid[0][2]} | #{@@board_grid[1][2]}| #{@@board_grid[2][2]}"
     puts " "
   end
 

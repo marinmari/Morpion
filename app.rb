@@ -9,6 +9,4 @@ require_relative 'lib/app/player.rb'
 
 
 game1 = Game.new
-board1 = Board.new
-board1.put_in_the_array
-board1.show_board
+  
