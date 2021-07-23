@@ -13,8 +13,6 @@ require_relative 'player.rb'
 class Board
   attr_accessor :a1, :a2, :a3, :b1, :b2, :b3, :c1, :c2, :c3
   @@board_grid = [ ] 
-  #@@board_array = [ ]
-  
 
   def initialize
     board_grid = [""]
